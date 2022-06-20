@@ -3,9 +3,7 @@ import {Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAx
 import styles from './Chart.module.scss'
 import {dateMonthTicker, lowestPrice, skipIntervals} from "../utils/data7";
 
-export default function Chart() {
-  const [options, setOptions] = useState({view: 'day'});
-  let controls = ['day', 'week', 'month', 'year'];
+export default function Chart({days, prices}) {
   let settings = {
     day: {
       interval: 48,
@@ -18,15 +16,23 @@ export default function Chart() {
     month: {
       interval: 6,
       xAxisFormatter: (value) => dateMonthTicker(value),
-      data: skipIntervals()
     }
   }
+  let controls;
+  if (+days >= 7) {
+    controls = settings.week;
+  } else if (+days >= 30) {
+    controls = settings.month;
+  } else {
+    controls = settings.day;
+  }
+
 
   return (
     <div className={styles.chart
     }>
       <ResponsiveContainer>
-        <AreaChart data={skipIntervals()}>
+        <AreaChart data={prices}>
           <defs>
             <linearGradient id="MyGradient" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor="rgba(0, 136, 254, 0.8)" />
@@ -34,7 +40,7 @@ export default function Chart() {
             </linearGradient>
           </defs>
           <CartesianGrid vertical={false} />
-          <XAxis padding={{left: 10}} dataKey="time" interval={6} tickFormatter={(value) => dateMonthTicker(value)} />
+          <XAxis padding={{left: 10}} dataKey="time" interval={controls.interval} />
           <YAxis axisLine={false} tickLine={false} interval="preserveStartEnd" domain={[lowestPrice, 'auto']}
                  tickCount={5}
                  tickFormatter={(value) => `$${value.toLocaleString()}`}

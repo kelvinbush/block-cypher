@@ -5,7 +5,8 @@ import {fetchChartData} from "../redux/charts/actions";
 
 const ChartContainer = ({coinId}) => {
   const [days, setDays] = useState("1");
-  const {charts} = useSelector(state => state.charts);
+  const charts = useSelector(state => state.charts);
+  console.log(charts);
   const {loading, error} = charts;
   const dispatch = useDispatch();
   const daysOptions = [1, 7, 30, 180, 365];
