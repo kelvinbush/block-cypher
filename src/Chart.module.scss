@@ -1,0 +1,28 @@
+.my_label {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5em;
+}
+
+.recharts-tooltip-label::after {
+  content: ":" !important;
+}
+
+.chart {
+  width: 100%;
+  margin: 0 0 0 -8px;
+  height: 180px;
+  color: #000;
+  font-size: 11px;
+
+  @media screen and (min-width: 600px) {
+    max-width: 800px;
+    margin: 30px auto;
+    height: 200px;
+    padding: 0 20px;
+  }
+}
