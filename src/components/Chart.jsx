@@ -1,33 +1,10 @@
-import React, {useState} from "react";
-import {Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
+import React from "react";
+import {Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, YAxis} from "recharts";
 import styles from './Chart.module.scss'
-import {dateMonthTicker, lowestPrice, skipIntervals} from "../utils/data7";
+import {lowestPrice} from "../utils/data7";
+import CustomXAxis from "./CustomXAxis";
 
 export default function Chart({days, prices}) {
-  let settings = {
-    day: {
-      interval: 48,
-      formatter: (value, name, props) => [`$${value.toLocaleString()}`, ""]
-    }
-    , week: {
-      interval: 36,
-      xAxisFormatter: (value) => dateMonthTicker(value),
-    },
-    month: {
-      interval: 6,
-      xAxisFormatter: (value) => dateMonthTicker(value),
-    }
-  }
-  let controls;
-  if (+days >= 7) {
-    controls = settings.week;
-  } else if (+days >= 30) {
-    controls = settings.month;
-  } else {
-    controls = settings.day;
-  }
-
-
   return (
     <div className={styles.chart
     }>
@@ -40,7 +17,7 @@ export default function Chart({days, prices}) {
             </linearGradient>
           </defs>
           <CartesianGrid vertical={false} />
-          <XAxis padding={{left: 10}} dataKey="time" interval={controls.interval} />
+          <CustomXAxis days={days} />
           <YAxis axisLine={false} tickLine={false} interval="preserveStartEnd" domain={[lowestPrice, 'auto']}
                  tickCount={5}
                  tickFormatter={(value) => `$${value.toLocaleString()}`}
