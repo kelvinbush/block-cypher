@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
 import styles from './Chart.module.scss'
-import {dateMonthTicker, lowestPrice, skipIntervals} from "./utils/data7";
+import {dateMonthTicker, lowestPrice, skipIntervals} from "../utils/data7";
 
 export default function Chart() {
   const [options, setOptions] = useState({view: 'day'});
