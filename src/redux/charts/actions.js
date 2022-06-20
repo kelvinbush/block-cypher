@@ -1,4 +1,5 @@
 import axios from "axios";
+import {refinePrices} from "../../utils/refinePrices";
 
 const baseUrl = "https://api.coingecko.com/api/v3/coins/";
 export const FETCH_CHART_SUCCESS = 'chartsStore/charts/FETCH_CHART_SUCCESS';
@@ -25,7 +26,7 @@ export const fetchChartData = (coinId, days) => async (dispatch) => {
   dispatch(fetchChartDataLoading());
   try {
     const response = await axios.get(`${baseUrl}${coinId}/market_chart?vs_currency=usd&days=${days}`);
-    dispatch(fetchChartDataAction(response.data.prices));
+    dispatch(fetchChartDataAction(refinePrices(response.data.prices)));
   } catch (error) {
     dispatch(fetchChartDataErrorAction(error));
   }
