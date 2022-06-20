@@ -1,9 +1,9 @@
 import axios from "axios";
 
 const baseUrl = "https://api.coingecko.com/api/v3/coins/";
-const FETCH_CHART_DATA = 'chartsStore/charts/FETCH_CHART_DATA';
-const FETCH_CHART_DATA_ERROR = 'chartsStore/charts/FETCH_CHART_DATA_ERROR';
-const FETCH_CHART_DATA_LOADING = 'chartsStore/charts/FETCH_CHART_DATA_LOADING';
+export const FETCH_CHART_DATA = 'chartsStore/charts/FETCH_CHART_DATA';
+export const FETCH_CHART_DATA_ERROR = 'chartsStore/charts/FETCH_CHART_DATA_ERROR';
+export const FETCH_CHART_DATA_LOADING = 'chartsStore/charts/FETCH_CHART_DATA_LOADING';
 
 
 const fetchChartDataAction = (prices) => ({
