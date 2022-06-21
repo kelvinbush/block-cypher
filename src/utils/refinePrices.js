@@ -8,6 +8,8 @@ export function refinePrices(prices, days) {
       return refineOneWeekPrices(prices);
     case 30:
       return refineOneMonthPrices(prices);
+    case 180:
+      return refineSixMonthPrices(prices);
     default:
       break;
   }
@@ -40,6 +42,16 @@ const refineOneWeekPrices = (prices) =>
 
 export const refineOneMonthPrices = (data) => {
   let myData = data.filter((item, index) => index % 24 === 0);
+  return myData.map((item) => {
+    return {
+      time: timeToDate(item[0]),
+      price: Math.round(item[1] * 100) / 100,
+    };
+  });
+};
+
+export const refineSixMonthPrices = (data) => {
+  let myData = data.filter((item, index) => index % 6 === 0);
   return myData.map((item) => {
     return {
       time: timeToDate(item[0]),

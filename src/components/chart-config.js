@@ -15,6 +15,14 @@ const options = {
     interval: 6,
     axisFormatter: (value) => dateMonthTicker(value),
   },
+  sixMonth: {
+    interval: 6,
+    axisFormatter: (value) => dateMonthTicker(value),
+  },
+  year: {
+    interval: 1,
+    axisFormatter: (value) => dateMonthTicker(value),
+  },
 };
 
 export const get_x_Controls = (days) => {
@@ -23,6 +31,8 @@ export const get_x_Controls = (days) => {
       return options.day;
     case 7:
       return options.week;
+    case 180:
+      return options.sixMonth;
     default:
       return options.month;
   }
