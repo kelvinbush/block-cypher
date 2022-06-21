@@ -3,7 +3,7 @@
 
   &__header {
     padding: 16px 16px;
-    margin: 30px 0;
+    margin: 30px 0 10px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,4 +57,11 @@
 
 
   }
+}
+
+.container {
+  background-color: #f8fafd;
+  padding: 16px 0;
+  margin: 0 5px;
+  border-radius: 0.4em;
 }

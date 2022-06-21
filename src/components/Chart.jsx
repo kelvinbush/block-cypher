@@ -20,8 +20,8 @@ export default function Chart({ days, prices }) {
         <AreaChart data={prices}>
           <defs>
             <linearGradient id="MyGradient" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="rgba(0, 136, 254, 0.8)" />
-              <stop offset="95%" stopColor="rgba(0, 136, 254, 0)" />
+              <stop offset="5%" stopColor="rgba(100,212,253,255)" />
+              <stop offset="95%" stopColor="rgba(212,246,255,255)" />
             </linearGradient>
           </defs>
           <CartesianGrid vertical={false} />
@@ -59,7 +59,7 @@ export default function Chart({ days, prices }) {
             strokeWidth="3"
             type="monotone"
             dataKey="price"
-            stroke={'#8884d8'}
+            stroke={'#264ea8'}
             fill="url(#MyGradient)"
           />
         </AreaChart>

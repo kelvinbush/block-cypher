@@ -38,14 +38,18 @@ const ChartContainer = ({ coinId, isLoading, markets }) => {
       </div>
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
-      {charts.prices && <Chart prices={charts.prices} days={days} />}
-      <select value={days} onChange={(e) => setDays(e.target.value)}>
-        {daysOptions.map((item) => (
-          <option key={item} value={item}>
-            {item} days
-          </option>
-        ))}
-      </select>
+      {charts.prices && (
+        <div className={styles.container}>
+          <Chart prices={charts.prices} days={days} />}
+          <select value={days} onChange={(e) => setDays(e.target.value)}>
+            {daysOptions.map((item) => (
+              <option key={item} value={item}>
+                {item} days
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
     </div>
   );
 };
