@@ -78,6 +78,22 @@ export const formatPrice = (price) => {
 };
 
 export const percentChange = (percentage) => {
-  // round off to 6 decimal places
   return `${Math.round(+percentage * 1000000) / 1000000}%`;
+};
+
+export const getDayString = (days) => {
+  switch (+days) {
+    case 1:
+      return '1D';
+    case 7:
+      return '1W';
+    case 30:
+      return '1M';
+    case 180:
+      return '6M';
+    case 365:
+      return '1Y';
+    default:
+      return '1M';
+  }
 };

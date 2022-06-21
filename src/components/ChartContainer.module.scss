@@ -14,12 +14,12 @@
 
       p {
         font-weight: 700;
-        font-size: 0.8em;
+        font-size: 0.9em;
       }
 
       span {
         font-size: 0.4em;
-        margin-bottom: 0.2em;
+        margin-bottom: 0.5em;
         font-weight: 400;
         margin-left: 0.4em;
         background-color: #feeaf5;
@@ -36,7 +36,7 @@
       svg {
         width: 0.4em;
         height: 0.4em;
-        margin-bottom: 0.1em;
+        margin-bottom: 0.2em;
         fill: #fe77b8;
         margin-left: 0.2em;
         background-color: #fff;
@@ -64,4 +64,27 @@
   padding: 16px 0;
   margin: 0 5px;
   border-radius: 0.4em;
+
+  &__chips {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    column-gap: 1em;
+    margin: 0 2em 0.5em 0;
+    font-size: 0.3em;
+
+    &__chip {
+      border: 1px solid rgba(21, 21, 20, 0.15);
+      background-color: #fff;
+      font-weight: 400;
+      padding: 0.2em 0.5em;
+      border-radius: 0.4em;
+    }
+  }
 }
+
+.active {
+  background-color: rgba(85, 135, 227, 0.3);
+  color: #4365a7;
+}
+
