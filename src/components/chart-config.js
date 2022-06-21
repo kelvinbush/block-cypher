@@ -5,7 +5,7 @@ export const dateMonthTicker = (date) => {
 
 const options = {
   day: {
-    interval: 24,
+    interval: 48,
   },
   week: {
     interval: 36,

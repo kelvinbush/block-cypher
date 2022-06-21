@@ -1,9 +1,18 @@
-export const skipIntervals = (data) => {
-  let myData = data.filter((item, index) => index % 24 === 0);
-  return myData.map((item) => {
-    return {
-      time: timeToDate(item[0]),
-      price: Math.round(item[1] * 100) / 100,
-    };
-  });
-};
+let arr = [1, 2, 3, 4, 5];
+
+function miniMaxSum(arr) {
+  let max = arr[0];
+  let min = arr[0];
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (max < arr[i]) {
+      max = arr[i];
+    }
+    if (min > arr[i]) {
+      min = arr[i];
+    }
+    sum += arr[i];
+  }
+  console.log(`${sum - max} ${sum - min}`);
+}
+miniMaxSum(arr);

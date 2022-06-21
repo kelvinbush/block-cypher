@@ -40,7 +40,7 @@ export default function Chart({ days, prices }) {
             tickLine={false}
             interval="preserveStartEnd"
             domain={[lowestPrice(prices), 'auto']}
-            tickCount={5}
+            tickCount={4}
             tickFormatter={(value) =>
               `$${width > 600 ? value.toLocaleString() : `${value.toLocaleString().slice(0, -4)}k`}`
             }

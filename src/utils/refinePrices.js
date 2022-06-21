@@ -73,3 +73,11 @@ export const refineOneYearPrices = (data) => {
     };
   });
 };
+export const formatPrice = (price) => {
+  return `$${price.toLocaleString()}`;
+};
+
+export const percentChange = (percentage) => {
+  // round off to 6 decimal places
+  return `${Math.round(+percentage * 1000000) / 1000000}%`;
+};
