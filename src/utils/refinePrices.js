@@ -11,7 +11,14 @@ export function refinePrices(prices, days) {
   }
 }
 
-export const lowestPrice = (prices) => prices.reduce((acc, curr) => (acc.price < curr.price ? acc : curr));
+export const lowestPrice = (prices) => {
+  if (prices.length === 0) {
+    return 0;
+  }
+  return prices.reduce((acc, curr) => {
+    return Math.min(acc, curr[1]);
+  });
+};
 
 const refineOneDayPrices = (prices) =>
   prices.map((item) => {
