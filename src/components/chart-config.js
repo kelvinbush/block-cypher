@@ -5,7 +5,7 @@ export const dateMonthTicker = (date) => {
 
 const options = {
   day: {
-    interval: 48,
+    interval: 24,
   },
   week: {
     interval: 36,
@@ -33,6 +33,8 @@ export const get_x_Controls = (days) => {
       return options.week;
     case 180:
       return options.sixMonth;
+    case 365:
+      return options.year;
     default:
       return options.month;
   }

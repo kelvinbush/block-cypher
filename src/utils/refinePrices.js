@@ -10,6 +10,8 @@ export function refinePrices(prices, days) {
       return refineOneMonthPrices(prices);
     case 180:
       return refineSixMonthPrices(prices);
+    case 365:
+      return refineOneYearPrices(prices);
     default:
       break;
   }
@@ -24,13 +26,15 @@ export const lowestPrice = (prices) => {
   });
 };
 
-const refineOneDayPrices = (prices) =>
-  prices.map((item) => {
+const refineOneDayPrices = (prices) => {
+  let data = prices.filter((item, index) => index % 2 === 0);
+  return data.map((item) => {
     return {
       time: convertTimeHoursMinutes(item[0]),
       price: Math.round(item[1] * 100) / 100,
     };
   });
+};
 
 const refineOneWeekPrices = (prices) =>
   prices.map((item) => {
@@ -51,6 +55,16 @@ export const refineOneMonthPrices = (data) => {
 };
 
 export const refineSixMonthPrices = (data) => {
+  let myData = data.filter((item, index) => index % 6 === 0);
+  return myData.map((item) => {
+    return {
+      time: timeToDate(item[0]),
+      price: Math.round(item[1] * 100) / 100,
+    };
+  });
+};
+
+export const refineOneYearPrices = (data) => {
   let myData = data.filter((item, index) => index % 6 === 0);
   return myData.map((item) => {
     return {
