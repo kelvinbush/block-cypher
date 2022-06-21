@@ -1,13 +1,13 @@
-import React from "react";
-import {Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, YAxis} from "recharts";
-import styles from './Chart.module.scss'
-import {lowestPrice} from "../utils/data7";
-import CustomXAxis from "./CustomXAxis";
+import React from 'react';
+import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import styles from './Chart.module.scss';
+import { dateMonthTicker, lowestPrice } from '../utils/data7';
 
-export default function Chart({days, prices}) {
+export default function Chart({ days, prices }) {
+  console.log('days');
+
   return (
-    <div className={styles.chart
-    }>
+    <div className={styles.chart}>
       <ResponsiveContainer>
         <AreaChart data={prices}>
           <defs>
@@ -17,10 +17,23 @@ export default function Chart({days, prices}) {
             </linearGradient>
           </defs>
           <CartesianGrid vertical={false} />
-          <CustomXAxis days={days} />
-          <YAxis axisLine={false} tickLine={false} interval="preserveStartEnd" domain={[lowestPrice, 'auto']}
-                 tickCount={5}
-                 tickFormatter={(value) => `$${value.toLocaleString()}`}
+          {controls.interval === 48 ? (
+            <XAxis padding={{ left: 10 }} dataKey="time" interval={controls.interval} />
+          ) : (
+            <XAxis
+              padding={{ left: 10 }}
+              dataKey="time"
+              interval={controls.interval}
+              tickFormatter={controls.axisFormatter}
+            />
+          )}
+          <YAxis
+            axisLine={false}
+            tickLine={false}
+            interval="preserveStartEnd"
+            domain={[lowestPrice, 'auto']}
+            tickCount={5}
+            tickFormatter={(value) => `$${value.toLocaleString()}`}
           />
           <Tooltip
             separator={' '}
@@ -31,7 +44,6 @@ export default function Chart({days, prices}) {
               borderRadius: '5px',
             }}
             labelStyle={{
-
               order: '1',
             }}
             itemStyle={{
@@ -42,14 +54,22 @@ export default function Chart({days, prices}) {
               display: 'flex',
               alignItems: 'center',
               columnGap: '7px',
-              border: "none",
+              border: 'none',
               borderRadius: '5px',
             }}
-            formatter={(value, name, props) => [`$${value.toLocaleString()}`, ""]}
-            cursor={{strokeWidth: 1, strokeDasharray: "3 3"}} />
-          <Area fillOpacity="1" strokeWidth="3" type="monotone" dataKey="price" stroke={"#8884d8"}
-                fill="url(#MyGradient)" />
+            formatter={(value, name, props) => [`$${value.toLocaleString()}`, '']}
+            cursor={{ strokeWidth: 1, strokeDasharray: '3 3' }}
+          />
+          <Area
+            fillOpacity="1"
+            strokeWidth="3"
+            type="monotone"
+            dataKey="price"
+            stroke={'#8884d8'}
+            fill="url(#MyGradient)"
+          />
         </AreaChart>
       </ResponsiveContainer>
-    </div>);
+    </div>
+  );
 }

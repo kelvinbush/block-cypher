@@ -42,5 +42,20 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "bracketSpacing": true,
+    "endOfLine": "lf",
+    "htmlWhitespaceSensitivity": "css",
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "useTabs": false,
+    "printWidth": 120,
+    "tabWidth": 2
   }
 }
