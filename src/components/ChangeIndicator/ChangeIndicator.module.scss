@@ -1,0 +1,32 @@
+.change {
+  font-size: 0.4em;
+  margin-bottom: 0.5em;
+  font-weight: 400;
+  margin-left: 0.4em;
+  background-color: #feeaf5;
+  padding: 0.1em 0.2em;
+  border-radius: 0.4em;
+  color: #f37db4;
+}
+
+.indicator {
+  svg {
+    width: 0.4em;
+    height: 0.4em;
+    margin-top: 0.2em;
+    fill: #fe77b8;
+    margin-left: 0.2em;
+    background-color: #fff;
+    border-radius: 50%;
+  }
+}
+
+.up {
+  color: #26ca61;
+  background-color: #effcf1;
+}
+
+.svg__up {
+  fill: #26ca61 !important;
+  background-color: #effcf1;
+}

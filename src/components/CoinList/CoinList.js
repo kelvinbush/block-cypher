@@ -11,9 +11,7 @@ const CoinList = ({ markets, loading }) => {
     <div className={styles.coin}>
       <h4>CoinList</h4>
       <div className={styles.coin__list}>
-        {markets.map((market) => (
-          <Coin key={market.id} market={market} />
-        ))}
+        {markets.length > 0 && markets.map((market) => <Coin key={market.id} market={market} />)}
       </div>
     </div>
   );
