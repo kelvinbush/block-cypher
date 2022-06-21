@@ -1,11 +1,11 @@
 import React from 'react';
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import styles from './Chart.module.scss';
-import { dateMonthTicker, lowestPrice } from '../utils/data7';
+import { lowestPrice } from '../utils/data7';
+import { get_x_Controls, toolTipStyle } from './chart-config';
 
 export default function Chart({ days, prices }) {
-  console.log('days');
-
+  const x_controls = get_x_Controls(days);
   return (
     <div className={styles.chart}>
       <ResponsiveContainer>
@@ -17,14 +17,14 @@ export default function Chart({ days, prices }) {
             </linearGradient>
           </defs>
           <CartesianGrid vertical={false} />
-          {controls.interval === 48 ? (
-            <XAxis padding={{ left: 10 }} dataKey="time" interval={controls.interval} />
+          {x_controls.interval === 48 ? (
+            <XAxis padding={{ left: 10 }} dataKey="time" interval={x_controls.interval} />
           ) : (
             <XAxis
               padding={{ left: 10 }}
               dataKey="time"
-              interval={controls.interval}
-              tickFormatter={controls.axisFormatter}
+              interval={x_controls.interval}
+              tickFormatter={x_controls.axisFormatter}
             />
           )}
           <YAxis
@@ -37,26 +37,10 @@ export default function Chart({ days, prices }) {
           />
           <Tooltip
             separator={' '}
-            wrapperStyle={{
-              padding: '0',
-              background: '#fff',
-              boxShadow: '0 0 10px rgba(0,0,0,.2)',
-              borderRadius: '5px',
-            }}
-            labelStyle={{
-              order: '1',
-            }}
-            itemStyle={{
-              fontWeight: 'bold',
-            }}
-            contentStyle={{
-              padding: '4px',
-              display: 'flex',
-              alignItems: 'center',
-              columnGap: '7px',
-              border: 'none',
-              borderRadius: '5px',
-            }}
+            wrapperStyle={toolTipStyle.wrapper}
+            labelStyle={toolTipStyle.label}
+            itemStyle={toolTipStyle.item}
+            contentStyle={toolTipStyle.content}
             formatter={(value, name, props) => [`$${value.toLocaleString()}`, '']}
             cursor={{ strokeWidth: 1, strokeDasharray: '3 3' }}
           />
