@@ -1,26 +1,24 @@
-import axios from "axios";
-import {refinePrices} from "../../utils/refinePrices";
+import axios from 'axios';
+import { refinePrices } from '../../utils/refinePrices';
 
-const baseUrl = "https://api.coingecko.com/api/v3/coins/";
+const baseUrl = 'https://api.coingecko.com/api/v3/coins/';
 export const FETCH_CHART_SUCCESS = 'chartsStore/charts/FETCH_CHART_SUCCESS';
 export const FETCH_CHART_ERROR = 'chartsStore/charts/FETCH_CHART_ERROR';
 export const FETCH_CHART_LOADING = 'chartsStore/charts/FETCH_CHART_LOADING';
 
-
 const fetchChartDataAction = (prices) => ({
   type: FETCH_CHART_SUCCESS,
-  payload: prices
+  payload: prices,
 });
 
 const fetchChartDataErrorAction = (error) => ({
   type: FETCH_CHART_ERROR,
-  payload: error
+  payload: error,
 });
 
 const fetchChartDataLoading = () => ({
-  type: FETCH_CHART_LOADING
+  type: FETCH_CHART_LOADING,
 });
-
 
 export const fetchChartData = (coinId, days) => async (dispatch) => {
   dispatch(fetchChartDataLoading());
@@ -30,4 +28,4 @@ export const fetchChartData = (coinId, days) => async (dispatch) => {
   } catch (error) {
     dispatch(fetchChartDataErrorAction(error));
   }
-}
+};
