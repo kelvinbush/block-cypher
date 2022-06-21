@@ -6,10 +6,15 @@
   box-sizing: border-box;
 }
 
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #4365a7;
   color: white;
   font-family: "Lato", sans-serif;
   font-size: 1.5em;
   font-weight: 400;
+  scroll-behavior: smooth;
 }

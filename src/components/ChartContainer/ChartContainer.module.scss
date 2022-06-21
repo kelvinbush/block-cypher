@@ -9,6 +9,11 @@
     justify-content: space-between;
     align-items: center;
 
+    @media screen and (min-width: 600px) {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
     &__title {
       display: flex;
       align-items: flex-end;
@@ -23,6 +28,10 @@
     &__coin {
       font-size: 0.5em;
       font-weight: 700;
+
+      @media screen and (min-width: 600px) {
+        font-size: 0.6em;
+      }
     }
 
 
@@ -34,6 +43,11 @@
   padding: 16px 0;
   margin: 0 5px;
   border-radius: 0.4em;
+
+  @media screen and (min-width: 600px) {
+    max-width: 800px;
+    margin: 0 auto;
+  }
 
   &__chips {
     display: flex;

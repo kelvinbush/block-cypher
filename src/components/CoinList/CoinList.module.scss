@@ -4,11 +4,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  transition: all 3s ease-in-out;
 
   &__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     grid-gap: 16px;
+    transition: all 3s ease-in-out;
   }
 
   input {
