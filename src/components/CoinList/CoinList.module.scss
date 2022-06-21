@@ -1,9 +1,23 @@
 .coin {
   background-color: #4365a7;
   padding: 30px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   &__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     grid-gap: 16px;
+  }
+
+  input {
+    width: 100%;
+    height: 40px;
+    margin: 20px auto;
+    border: 1px solid #4365a7;
+    border-radius: 5px;
+    padding: 0 10px;
+    outline: none;
   }
 }

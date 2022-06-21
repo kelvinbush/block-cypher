@@ -18,9 +18,14 @@ const CoinList = ({ markets, loading }) => {
 
   return (
     <div className={styles.coin}>
-      <input type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+      <input
+        placeholder={'Search coin'}
+        type="text"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
       <div className={styles.coin__list}>
-        {data.length > 0 && data.map((market) => <Coin key={market.id} market={market} />)}
+        {data.length > 0 ? data.map((market) => <Coin key={market.id} market={market} />) : <h4>No results</h4>}
       </div>
     </div>
   );
