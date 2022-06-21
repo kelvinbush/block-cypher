@@ -8,13 +8,9 @@
   line-height: 1.5em;
 }
 
-.recharts-tooltip-label::after {
-  content: ":" !important;
-}
-
 .chart {
   width: 100%;
-  margin: 0 0 0 -8px;
+  margin: 0 0 0 -10px;
   height: 180px;
   color: #000;
   font-size: 11px;

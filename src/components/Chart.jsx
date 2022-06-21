@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import styles from './Chart.module.scss';
 import { get_x_Controls, toolTipStyle } from './chart-config';
@@ -6,6 +6,14 @@ import { lowestPrice } from '../utils/refinePrices';
 
 export default function Chart({ days, prices }) {
   const x_controls = get_x_Controls(days);
+
+  // listen to size of the device window
+  const [width, setWidth] = useState(window.innerWidth);
+
+  window.addEventListener('resize', () => {
+    setWidth(window.innerWidth);
+  });
+
   return (
     <div className={styles.chart}>
       <ResponsiveContainer>
@@ -33,7 +41,9 @@ export default function Chart({ days, prices }) {
             interval="preserveStartEnd"
             domain={[lowestPrice(prices), 'auto']}
             tickCount={5}
-            tickFormatter={(value) => `$${value.toLocaleString()}`}
+            tickFormatter={(value) =>
+              `$${width > 600 ? value.toLocaleString() : `${value.toLocaleString().slice(0, -4)}k`}`
+            }
           />
           <Tooltip
             separator={' '}

@@ -6,6 +6,8 @@ export function refinePrices(prices, days) {
       return refineOneDayPrices(prices);
     case 7:
       return refineOneWeekPrices(prices);
+    case 30:
+      return refineOneMonthPrices(prices);
     default:
       break;
   }
@@ -36,7 +38,7 @@ const refineOneWeekPrices = (prices) =>
     };
   });
 
-export const skipDayIntervals = (data) => {
+export const refineOneMonthPrices = (data) => {
   let myData = data.filter((item, index) => index % 24 === 0);
   return myData.map((item) => {
     return {
