@@ -1,4 +1,7 @@
-import { dateMonthTicker } from '../utils/data7';
+export const dateMonthTicker = (date) => {
+  let mDate = date.split(' ');
+  return mDate[2] + ' ' + mDate[1];
+};
 
 const options = {
   day: {

@@ -1,13 +1,10 @@
 import { convertTimeHoursMinutes, timeToDate } from './date-utils';
 
-const daysOptions = [1, 7, 30, 180, 365];
-
 export function refinePrices(prices, days) {
   switch (+days) {
     case 1:
       return refineOneDayPrices(prices);
     case 7:
-      console.log('refineOneWeekPrices', days);
       return refineOneWeekPrices(prices);
     default:
       break;
@@ -31,3 +28,13 @@ const refineOneWeekPrices = (prices) =>
       price: Math.round(item[1] * 100) / 100,
     };
   });
+
+export const skipDayIntervals = (data) => {
+  let myData = data.filter((item, index) => index % 24 === 0);
+  return myData.map((item) => {
+    return {
+      time: timeToDate(item[0]),
+      price: Math.round(item[1] * 100) / 100,
+    };
+  });
+};

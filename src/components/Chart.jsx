@@ -1,8 +1,8 @@
 import React from 'react';
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import styles from './Chart.module.scss';
-import { lowestPrice } from '../utils/data7';
 import { get_x_Controls, toolTipStyle } from './chart-config';
+import { lowestPrice } from '../utils/refinePrices';
 
 export default function Chart({ days, prices }) {
   const x_controls = get_x_Controls(days);
@@ -31,7 +31,7 @@ export default function Chart({ days, prices }) {
             axisLine={false}
             tickLine={false}
             interval="preserveStartEnd"
-            domain={[lowestPrice, 'auto']}
+            domain={[lowestPrice(prices), 'auto']}
             tickCount={5}
             tickFormatter={(value) => `$${value.toLocaleString()}`}
           />
