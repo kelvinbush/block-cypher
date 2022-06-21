@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import Chart from './Chart';
+import Chart from '../Chart/Chart';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchChartData } from '../redux/charts/actions';
+import { fetchChartData } from '../../redux/charts/actions';
 import styles from './ChartContainer.module.scss';
-import { formatPrice, getDayString, percentChange } from '../utils/refinePrices';
+import { formatPrice, getDayString, percentChange } from '../../utils/refinePrices';
 import { BsArrowDownRightCircleFill, BsArrowUpRightCircleFill } from 'react-icons/bs';
 
 const ChartContainer = ({ coinId, isLoading, markets }) => {

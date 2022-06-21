@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import styles from './Chart.module.scss';
 import { get_x_Controls, toolTipStyle } from './chart-config';
-import { lowestPrice } from '../utils/refinePrices';
+import { lowestPrice } from '../../utils/refinePrices';
 
 export default function Chart({ days, prices }) {
   const x_controls = get_x_Controls(days);

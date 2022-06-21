@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './HomeHero.module.scss';
+import styles from './Hero.module.scss';
 
-const HomeHero = (props) => {
+const Hero = () => {
   return (
     <div className={styles.home_hero}>
       <h1>
@@ -13,4 +13,4 @@ const HomeHero = (props) => {
   );
 };
 
-export default HomeHero;
+export default Hero;

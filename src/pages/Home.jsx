@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import ChartContainer from '../components/ChartContainer';
-import HomeHero from '../components/HomeHero/HomeHero';
+import ChartContainer from '../components/ChartContainer/ChartContainer';
+import Hero from '../components/Hero/Hero';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMarketsData } from '../redux/markets/actions';
 
@@ -15,7 +15,7 @@ const Home = (props) => {
 
   return (
     <div>
-      <HomeHero />
+      <Hero />
       <ChartContainer coinId={'bitcoin'} isLoading={loading} markets={markets} />
     </div>
   );
