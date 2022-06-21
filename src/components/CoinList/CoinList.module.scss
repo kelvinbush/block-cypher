@@ -1,0 +1,9 @@
+.coin {
+  background-color: #4365a7;
+  padding: 30px 16px;
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+  }
+}

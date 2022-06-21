@@ -5,6 +5,7 @@ import { fetchChartData } from '../../redux/charts/actions';
 import styles from './ChartContainer.module.scss';
 import { formatPrice, getDayString, percentChange } from '../../utils/refinePrices';
 import { BsArrowDownRightCircleFill, BsArrowUpRightCircleFill } from 'react-icons/bs';
+import ChangeIndicator from '../ChangeIndicator/ChangeIndicator';
 
 const ChartContainer = ({ coinId, isLoading, markets }) => {
   const [days, setDays] = useState('1');
@@ -30,8 +31,7 @@ const ChartContainer = ({ coinId, isLoading, markets }) => {
         {bitcoin && (
           <div className={styles.chart__header__title}>
             <p>{coinData.price}</p>
-            <span className={`${coinData.isUp ? styles.up : ''}`}>{coinData.change}</span>
-            {coinData.isUp ? <BsArrowUpRightCircleFill className={styles.svg__up} /> : <BsArrowDownRightCircleFill />}
+            <ChangeIndicator coinData={coinData} />
           </div>
         )}
         <p className={styles.chart__header__coin}>Bitcoin USD(BTC-USD)</p>
