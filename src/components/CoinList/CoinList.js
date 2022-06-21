@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Coin from '../Coin/Coin';
 import styles from './CoinList.module.scss';
 
 const CoinList = ({ markets, loading }) => {
+  const [searchTerm, setSearchTerm] = useState('');
   if (loading) {
     return <h4>Loading...</h4>;
+  }
+  const filteredCoins = markets.filter((coin) => coin.name.toLowerCase().includes(searchTerm.toLowerCase()));
+
+  let data;
+  if (searchTerm === '') {
+    data = markets;
+  } else {
+    data = filteredCoins;
   }
 
   return (
     <div className={styles.coin}>
-      <h4>CoinList</h4>
+      <input type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
       <div className={styles.coin__list}>
-        {markets.length > 0 && markets.map((market) => <Coin key={market.id} market={market} />)}
+        {data.length > 0 && data.map((market) => <Coin key={market.id} market={market} />)}
       </div>
     </div>
   );
