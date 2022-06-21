@@ -1,5 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: #4365a7;
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-size: 1.5em;
+  font-weight: 400;
 }

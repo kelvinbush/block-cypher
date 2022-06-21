@@ -1,11 +1,11 @@
 import React from 'react';
-import ChartContainer from "../components/ChartContainer";
+import ChartContainer from '../components/ChartContainer';
+import HomeHero from '../components/HomeHero/HomeHero';
 
 const Home = (props) => (
   <div>
-    <h1>Home</h1>
-    <p>This is the home page</p>
-    <ChartContainer coinId={'bitcoin'}/>
+    <HomeHero />
+    <ChartContainer coinId={'bitcoin'} />
   </div>
 );
 

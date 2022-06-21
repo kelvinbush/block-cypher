@@ -20,7 +20,7 @@ const options = {
     axisFormatter: (value) => dateMonthTicker(value),
   },
   year: {
-    interval: 1,
+    interval: 12,
     axisFormatter: (value) => dateMonthTicker(value),
   },
 };
