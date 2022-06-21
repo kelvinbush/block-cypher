@@ -1,6 +1,7 @@
 import React from 'react';
 import ChangeIndicator from '../ChangeIndicator/ChangeIndicator';
 import { formatPrice, percentChange } from '../../utils/refinePrices';
+import styles from './Coin.module.scss';
 
 const Coin = ({ market }) => {
   const coinData = {
@@ -13,20 +14,16 @@ const Coin = ({ market }) => {
   };
 
   return (
-    <div>
-      <div>
+    <div className={styles.crypto}>
+      <div className={styles.crypto_header}>
         <img src={coinData.image} alt={coinData.name} />
         <div>
-          <p>{coinData.symbol}</p>
-          <p>{coinData.name}</p>
+          <p className={styles.crypto_header_symbol}>{coinData.symbol}</p>
+          <p className={styles.crypto_header_name}>{coinData.name}</p>
         </div>
       </div>
-      <div>
-        <div>
-          <ChangeIndicator coinData={coinData} />
-          <p>{coinData.price}</p>
-        </div>
-      </div>
+      <ChangeIndicator coinData={coinData} isList={true} />
+      <p className={styles.crypto_price}>{coinData.price}</p>
     </div>
   );
 };

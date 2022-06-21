@@ -31,7 +31,7 @@ const ChartContainer = ({ coinId, isLoading, markets }) => {
         {bitcoin && (
           <div className={styles.chart__header__title}>
             <p>{coinData.price}</p>
-            <ChangeIndicator coinData={coinData} />
+            <ChangeIndicator coinData={coinData} isList={false} />
           </div>
         )}
         <p className={styles.chart__header__coin}>Bitcoin USD(BTC-USD)</p>
