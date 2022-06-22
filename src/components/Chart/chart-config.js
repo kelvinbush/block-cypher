@@ -53,6 +53,9 @@ export const coinData = (market) => ({
   rank: market.market_cap_rank,
   supply: market.circulating_supply,
   mCap: market.market_cap_change_percentage_24h,
+  high: market.high_24h,
+  low: market.low_24h,
+  volume: market.total_volume,
 });
 
 export const toolTipStyle = {

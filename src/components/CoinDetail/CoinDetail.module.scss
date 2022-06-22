@@ -8,12 +8,13 @@
   }
 
   &_header {
-    background-color: #fff;
+    background-color: #edf2f2;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 8px;
     display: flex;
     column-gap: 12px;
+    color: black;
 
     img {
       width: 80px;
@@ -24,26 +25,70 @@
   &_stats {
     font-weight: 700;
     font-size: 0.8em;
+    margin: 0.5em 0 1em 0;
 
 
     span {
       color: #626060;
       font-weight: 400;
       font-size: 0.3em;
+      margin-bottom: 1em;
     }
   }
 
   &_price {
-    font-weight: 700;
-    font-size: 1.1em;
-
     span {
+      color: #26ca61;
+
       svg {
-        width: 0.4em;
-        height: 0.4em;
+        margin-right: 0.3em;
+        position: relative;
+        top: 0.2em;
+        width: 1em;
+        height: 1em;
+        fill: #26ca61;
+      }
+
+    }
+
+    .isDown {
+      color: red;
+
+      svg {
+        fill: red;
       }
     }
+
   }
+
+  &_container {
+    margin-top: 20px;
+    background-color: #fff;
+    color: black;
+    font-size: 0.6em;
+    padding: 16px;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 50px;
+      border-bottom: 1px solid rgba(128, 128, 128, 0.48);
+
+      p:first-child {
+        color: rgb(128, 128, 128);
+      }
+
+      p:last-child {
+        font-weight: 700;
+      }
+    }
+
+    :last-child {
+      border-bottom: none;
+    }
+  }
+
 }
 
 
