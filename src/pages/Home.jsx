@@ -14,10 +14,12 @@ const Home = () => {
     dispatch(fetchMarketsData());
   }, [dispatch]);
 
+  const bitcoin = markets.find((market) => market.id === 'bitcoin');
+
   return (
     <div>
       <Hero />
-      <ChartContainer coinId={'bitcoin'} markets={markets} />
+      {bitcoin && <ChartContainer coin={bitcoin} />}
       <CoinList markets={markets} loading={loading} />
     </div>
   );

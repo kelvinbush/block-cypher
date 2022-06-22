@@ -7,30 +7,31 @@ import { getDayString } from '../../utils/refinePrices';
 import ChangeIndicator from '../ChangeIndicator/ChangeIndicator';
 import { coinData } from '../Chart/chart-config';
 
-const ChartContainer = ({ coinId, markets }) => {
+const ChartContainer = ({ coin }) => {
   const [days, setDays] = useState('1');
   const charts = useSelector((state) => state.charts);
-  const bitcoin = markets.find((market) => market.id === 'bitcoin');
   const { loading, error } = charts;
   const dispatch = useDispatch();
   const daysOptions = [1, 7, 30, 180, 365];
 
   useEffect(() => {
-    dispatch(fetchChartData(coinId, days));
-  }, [dispatch, coinId, days]);
+    dispatch(fetchChartData(coin.id, days));
+  }, [dispatch, coin.id, days]);
 
-  const data = bitcoin && coinData(bitcoin);
+  const data = coin && coinData(coin);
 
   return (
     <div className={styles.chart}>
       <div className={styles.chart__header}>
-        {bitcoin && (
+        {coin && (
           <div className={styles.chart__header__title}>
             <p>{data.price}</p>
             <ChangeIndicator coinData={data} isList={false} />
           </div>
         )}
-        <p className={styles.chart__header__coin}>Bitcoin USD(BTC-USD)</p>
+        <p className={styles.chart__header__coin}>
+          {coin.name} (<span>{coin.symbol}-usd</span>)
+        </p>
       </div>
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}

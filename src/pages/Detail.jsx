@@ -17,11 +17,13 @@ const Detail = () => {
     }
   }, [dispatch, markets]);
 
+  const coin = markets.find((market) => market.id === coinId);
+
   return (
     <div>
       <h1>Detail</h1>
       <button onClick={() => navigate(-1)}>Back</button>
-      <ChartContainer coinId={coinId} markets={markets} />
+      {coin && <ChartContainer coin={coin} />}
     </div>
   );
 };
