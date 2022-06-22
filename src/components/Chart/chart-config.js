@@ -1,3 +1,5 @@
+import { formatPrice, percentChange } from '../../utils/refinePrices';
+
 export const dateMonthTicker = (date) => {
   let mDate = date.split(' ');
   return mDate[2] + ' ' + mDate[1];
@@ -39,6 +41,15 @@ export const get_x_Controls = (days) => {
       return options.month;
   }
 };
+
+export const coinData = (market) => ({
+  isUp: +market.price_change_percentage_24h > 0,
+  change: percentChange(market.price_change_percentage_24h),
+  price: formatPrice(market.current_price),
+  image: market.image,
+  symbol: `${market.symbol}-USD`,
+  name: `${market.name} USD`,
+});
 
 export const toolTipStyle = {
   wrapper: {

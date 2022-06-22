@@ -21,7 +21,7 @@ const Detail = () => {
     <div>
       <h1>Detail</h1>
       <button onClick={() => navigate(-1)}>Back</button>
-      <ChartContainer coinId={coinId} isLoading={loading} markets={markets} />
+      <ChartContainer coinId={coinId} markets={markets} />
     </div>
   );
 };

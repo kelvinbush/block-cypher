@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <div>
       <Hero />
-      <ChartContainer coinId={'bitcoin'} isLoading={loading} markets={markets} />
+      <ChartContainer coinId={'bitcoin'} markets={markets} />
       <CoinList markets={markets} loading={loading} />
     </div>
   );
