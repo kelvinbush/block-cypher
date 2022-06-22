@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types,max-len */
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Coin from '../Coin/Coin';
 import styles from './CoinList.module.scss';
-import { useNavigate } from 'react-router-dom';
 
 const CoinList = ({ markets, loading }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -25,7 +26,7 @@ const CoinList = ({ markets, loading }) => {
   return (
     <div className={styles.coin}>
       <input
-        placeholder={'Search coin'}
+        placeholder="Search coin"
         type="text"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}

@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
+import React from 'react';
 import Detail from './pages/Detail';
 import Home from './pages/Home';
 import Hero from './components/Hero/Hero';
-import React from 'react';
 
 function App() {
   return (

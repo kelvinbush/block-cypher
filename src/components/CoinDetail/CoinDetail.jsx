@@ -1,10 +1,13 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
+import { AiFillCaretDown, AiFillCaretUp } from 'react-icons/ai';
 import styles from './CoinDetail.module.scss';
 import { coinData } from '../Chart/chart-config';
-import { AiFillCaretDown, AiFillCaretUp } from 'react-icons/ai';
 
 const CoinDetail = ({ coin }) => {
-  const { image, isUp, name, change, price, rank, symbol, mktCap, high, low, volume } = coinData(coin);
+  const {
+    image, isUp, name, change, price, rank, symbol, mktCap, high, low, volume,
+  } = coinData(coin);
 
   return (
     <div className={styles.detail}>
@@ -32,11 +35,17 @@ const CoinDetail = ({ coin }) => {
         </div>
         <div>
           <p>24 High</p>
-          <p>${high.toLocaleString()}</p>
+          <p>
+            $
+            {high.toLocaleString()}
+          </p>
         </div>
         <div>
           <p>24 Low</p>
-          <p>${low.toLocaleString()}</p>
+          <p>
+            $
+            {low.toLocaleString()}
+          </p>
         </div>
         <div>
           <p>Volume</p>
@@ -48,7 +57,10 @@ const CoinDetail = ({ coin }) => {
         </div>
         <div>
           <p>Market Cap</p>
-          <p>${mktCap.toLocaleString()}</p>
+          <p>
+            $
+            {mktCap.toLocaleString()}
+          </p>
         </div>
       </div>
     </div>

@@ -1,8 +1,8 @@
 import { formatPrice, percentChange } from '../../utils/refinePrices';
 
-export const dateMonthTicker = (date) => {
-  let mDate = date.split(' ');
-  return mDate[2] + ' ' + mDate[1];
+const dateMonthTicker = (date) => {
+  const mDate = date.split(' ');
+  return `${mDate[2]} ${mDate[1]}`;
 };
 
 const options = {
@@ -27,7 +27,7 @@ const options = {
   },
 };
 
-export const get_x_Controls = (days) => {
+const getXAxisControls = (days) => {
   switch (+days) {
     case 1:
       return options.day;
@@ -42,7 +42,7 @@ export const get_x_Controls = (days) => {
   }
 };
 
-export const coinData = (market) => ({
+const coinData = (market) => ({
   isUp: +market.price_change_percentage_24h > 0,
   change: percentChange(market.price_change_percentage_24h),
   price: formatPrice(market.current_price),
@@ -58,7 +58,7 @@ export const coinData = (market) => ({
   volume: market.total_volume,
 });
 
-export const toolTipStyle = {
+const toolTipStyle = {
   wrapper: {
     padding: '0',
     background: '#fff',
@@ -79,4 +79,7 @@ export const toolTipStyle = {
     border: 'none',
     borderRadius: '5px',
   },
+};
+export {
+  toolTipStyle, coinData, getXAxisControls, dateMonthTicker,
 };

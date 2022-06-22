@@ -11,7 +11,7 @@ describe('Test presence of Components', () => {
     const component = renderer
       .create(
         <BrowserRouter>
-          <ChangeIndicator coinData={{}} isList={true} />
+          <ChangeIndicator coinData={{ isUp: false, change: 44 }} isList />
         </BrowserRouter>,
       )
       .toJSON();
@@ -21,7 +21,7 @@ describe('Test presence of Components', () => {
     const component = renderer
       .create(
         <BrowserRouter>
-          <Chart prices={[]} days={'1'} />
+          <Chart prices={[]} days="1" />
         </BrowserRouter>,
       )
       .toJSON();

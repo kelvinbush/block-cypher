@@ -1,15 +1,14 @@
 import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { BiArrowBack } from 'react-icons/bi';
 import { fetchMarketsData } from '../redux/markets/actions';
 import ChartContainer from '../components/ChartContainer/ChartContainer';
 import CoinDetail from '../components/CoinDetail/CoinDetail';
-import { BiArrowBack } from 'react-icons/bi';
 
 const Detail = () => {
-  let { coinId } = useParams();
+  const { coinId } = useParams();
   const { markets } = useSelector((state) => state.markets);
-  const { loading } = markets;
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -23,10 +22,12 @@ const Detail = () => {
 
   return (
     <div>
-      <div className={'back'}>
-        <button onClick={() => navigate(-1)}>
+      <div className="back">
+        <button type="button" onClick={() => navigate(-1)}>
           {' '}
-          <BiArrowBack /> <span>Back</span>
+          <BiArrowBack />
+          {' '}
+          <span>Back</span>
         </button>
       </div>
       {coin && <ChartContainer coin={coin} />}

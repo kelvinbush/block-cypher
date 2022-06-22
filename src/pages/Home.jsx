@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import ChartContainer from '../components/ChartContainer/ChartContainer';
 import { useDispatch, useSelector } from 'react-redux';
+import ChartContainer from '../components/ChartContainer/ChartContainer';
 import { fetchMarketsData } from '../redux/markets/actions';
 import CoinList from '../components/CoinList/CoinList';
 
