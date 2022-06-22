@@ -14,6 +14,7 @@ const CoinDetail = ({ coin }) => {
           <p>{symbol.slice(0, -4)}</p>
           <p>Price statistics</p>
         </div>
+        <AiFillCaretDown />
       </div>
       <div className={styles.detail_container}>
         <div>

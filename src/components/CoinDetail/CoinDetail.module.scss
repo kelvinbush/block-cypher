@@ -8,7 +8,7 @@
   }
 
   &_header {
-    background-color: #edf2f2;
+    background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 8px;
@@ -19,6 +19,23 @@
     img {
       width: 80px;
       height: 80px;
+    }
+
+    div {
+      p:first-child {
+        text-transform: uppercase;
+        color: #626060;
+      }
+
+      p:last-child {
+        font-size: 0.8em;
+        margin-top: 0.5em;
+      }
+    }
+
+    svg {
+      margin-left: auto;
+      align-self: center;
     }
   }
 
