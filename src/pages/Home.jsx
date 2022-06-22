@@ -12,7 +12,7 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(fetchMarketsData());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
