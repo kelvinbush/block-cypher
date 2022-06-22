@@ -49,6 +49,10 @@ export const coinData = (market) => ({
   image: market.image,
   symbol: `${market.symbol}-USD`,
   name: `${market.name} USD`,
+  mktCap: market.market_cap,
+  rank: market.market_cap_rank,
+  supply: market.circulating_supply,
+  mCap: market.market_cap_change_percentage_24h,
 });
 
 export const toolTipStyle = {

@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMarketsData } from '../redux/markets/actions';
 import ChartContainer from '../components/ChartContainer/ChartContainer';
+import CoinDetail from '../components/CoinDetail/CoinDetail';
 
 const Detail = () => {
   let { coinId } = useParams();
@@ -21,9 +22,9 @@ const Detail = () => {
 
   return (
     <div>
-      <h1>Detail</h1>
       <button onClick={() => navigate(-1)}>Back</button>
       {coin && <ChartContainer coin={coin} />}
+      {coin && <CoinDetail coin={coin} />}
     </div>
   );
 };

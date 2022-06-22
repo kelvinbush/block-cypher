@@ -7,7 +7,6 @@ import { lowestPrice } from '../../utils/refinePrices';
 export default function Chart({ days, prices }) {
   const x_controls = get_x_Controls(days);
 
-  // listen to size of the device window
   const [width, setWidth] = useState(window.innerWidth);
 
   window.addEventListener('resize', () => {
@@ -42,7 +41,11 @@ export default function Chart({ days, prices }) {
             domain={[lowestPrice(prices), 'auto']}
             tickCount={4}
             tickFormatter={(value) =>
-              `$${width > 600 ? value.toLocaleString() : `${value.toLocaleString().slice(0, -4)}k`}`
+              `$${
+                width > 600
+                  ? value.toLocaleString()
+                  : `${value < 1000 ? value.toFixed(2) : `${value.toLocaleString().slice(0, -4)}k`}`
+              }`
             }
           />
           <Tooltip
