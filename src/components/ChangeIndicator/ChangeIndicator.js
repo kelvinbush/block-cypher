@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { BsArrowDownRightCircleFill, BsArrowUpRightCircleFill } from 'react-icons/bs';
@@ -9,7 +8,8 @@ const ChangeIndicator = ({ coinData, isList }) => (
     <span className={`${styles.change} ${isList ? styles.change_isList : ''} ${coinData.isUp ? styles.up : ''}`}>
       {coinData.change}
     </span>
-    {coinData.isUp ? <BsArrowUpRightCircleFill className={styles.svg__up} /> : <BsArrowDownRightCircleFill />}
+    {coinData.isUp ? <BsArrowUpRightCircleFill className={styles.svg__up} />
+      : <BsArrowDownRightCircleFill />}
   </div>
 );
 
