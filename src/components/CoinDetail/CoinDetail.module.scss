@@ -16,6 +16,11 @@
     column-gap: 12px;
     color: black;
 
+    @media screen and (min-width: 600px) {
+      width: 450px;
+      margin: 0 auto;
+    }
+
     img {
       width: 80px;
       height: 80px;
@@ -84,6 +89,12 @@
     color: black;
     font-size: 0.6em;
     padding: 16px;
+
+    @media screen and (min-width: 600px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 40px;
+    }
 
     div {
       display: flex;
