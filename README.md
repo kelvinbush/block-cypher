@@ -5,6 +5,9 @@
 
  This is a React app consuming the [Coin Gecko](https://www.coingecko.com/en/api/documentation).
  Displaying the metrics and statistics of top cryptocurrencies.
+ The user is able to filter the data displayed on the chart based on the number of days e.g. 24hrs, 7days, 30 days ...
+ Upon clicking on a coin in the list of coins you can view in depth data about the specific coin in the details page.
+ You can also search for a coin in the search bar.
 
 
 ## Built With
@@ -20,6 +23,11 @@
 
 ## Video presentation
 [Link](https://www.loom.com/share/4236f7074cc049068789d6eb6763a472)
+
+## Screenshots
+<img src="screenshots/img.png" alt="coin chart">
+<img src="screenshots/img_1.png" alt="coin list">
+<img src="screenshots/img_2.png" alt="coin stats">
 
 ## Getting Started
 To get a local copy up and running follow these simple example steps.
