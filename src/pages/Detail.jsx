@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchMarketsData } from '../redux/markets/actions';
 import ChartContainer from '../components/ChartContainer/ChartContainer';
 import CoinDetail from '../components/CoinDetail/CoinDetail';
+import { BiArrowBack } from 'react-icons/bi';
 
 const Detail = () => {
   let { coinId } = useParams();
@@ -22,7 +23,12 @@ const Detail = () => {
 
   return (
     <div>
-      <button onClick={() => navigate(-1)}>Back</button>
+      <div className={'back'}>
+        <button onClick={() => navigate(-1)}>
+          {' '}
+          <BiArrowBack /> <span>Back</span>
+        </button>
+      </div>
       {coin && <ChartContainer coin={coin} />}
       {coin && <CoinDetail coin={coin} />}
     </div>
