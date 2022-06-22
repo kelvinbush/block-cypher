@@ -21,8 +21,6 @@
 
 [Live Demo Link](https://block-cypher.netlify.app/)
 
-## Video presentation
-[Link](https://www.loom.com/share/4236f7074cc049068789d6eb6763a472)
 
 ## Screenshots
 <img src="screenshots/img.png" alt="coin chart">
