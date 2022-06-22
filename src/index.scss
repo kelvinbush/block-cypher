@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #4365a7;
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-size: 1.5em;
+  font-weight: 400;
+  scroll-behavior: smooth;
+}
+
+.back {
+  width: 580px;
+  text-align: left;
+  margin: 0 16px;
+
+  @media screen and (min-width: 600px) {
+    margin: 0 auto 8px auto;
+  }
+
+  button {
+    outline: none;
+    border: none;
+    padding: 4px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+}

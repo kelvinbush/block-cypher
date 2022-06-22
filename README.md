@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Microverse-blueviolet)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/14ab8586-1e4c-4dcf-9627-c5d106a9fd32/deploy-status)](https://app.netlify.com/sites/block-cypher/deploys)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Crypto-tracker
 
-## Available Scripts
+ This is a React app consuming the [Coin Gecko](https://www.coingecko.com/en/api/documentation).
+ Displaying the metrics and statistics of top cryptocurrencies.
+ The user is able to filter the data displayed on the chart based on the number of days e.g. 24hrs, 7days, 30 days ...
+ Upon clicking on a coin in the list of coins you can view in depth data about the specific coin in the details page.
+ You can also search for a coin in the search bar.
 
-In the project directory, you can run:
 
-### `npm start`
+## Built With
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [React](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
+- [React-Router](https://reactrouter.com/)
+- [Sass](https://sass-lang.com/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Live Demo
 
-### `npm test`
+[Live Demo Link](https://block-cypher.netlify.app/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Video presentation
+[Link](https://www.loom.com/share/4236f7074cc049068789d6eb6763a472)
 
-### `npm run build`
+## Screenshots
+<img src="screenshots/img.png" alt="coin chart">
+<img src="screenshots/img_1.png" alt="coin list">
+<img src="screenshots/img_2.png" alt="coin stats">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
+To get a local copy up and running follow these simple example steps.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Copy this link `https://github.com/kelvinbush/block-cypher.git `.
+- Get the directory that you want to clone the repository.
+- Open the command prompt in this directory.
+- Write `git clone https://github.com/kelvinbush/block-cypher.git`.
+- Go to the repository folder in your command prompt `cd block-cypher`.
+- Run `npm install` to install the React and linter dependencies.
+- Run `npm build` to build the application with react .
+- Run `npm run start` to start the development server.
+- Run `npm run test` to run the tests.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Authors
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+👤 **Kelvin Bush**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- GitHub: [@kelvinbush](https://github.com/kelvinbush)
+- Twitter: [@kelvin_bush_](https://twitter.com/kelvin_bush_)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/kelvin-wachiye-04b469173/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🤝 Contributing
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Contributions, issues, and feature requests are welcome!
 
-## Learn More
+Feel free to check the [issues page](../../issues/).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Show your support
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Give a ⭐️ if you like this project!
 
-### Code Splitting
+## Attributions
+- Design Inspiration by [Nelson](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs))
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Acknowledgments
 
-### Analyzing the Bundle Size
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📝 License
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is [MIT](./MIT.md) licensed.

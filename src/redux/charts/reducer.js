@@ -1,10 +1,10 @@
-import {FETCH_CHART_SUCCESS, FETCH_CHART_ERROR, FETCH_CHART_LOADING} from "./actions";
+import { FETCH_CHART_SUCCESS, FETCH_CHART_ERROR, FETCH_CHART_LOADING } from './actions';
 
 const initialState = {
   prices: [],
   loading: false,
-  error: null
-}
+  error: null,
+};
 
 export default function chartsReducer(state = initialState, action) {
   switch (action.type) {
@@ -13,20 +13,21 @@ export default function chartsReducer(state = initialState, action) {
         ...state,
         prices: action.payload,
         loading: false,
-        error: null
-      }
+        error: null,
+      };
     case FETCH_CHART_LOADING:
       return {
         ...state,
         loading: true,
-        error: null
-      }
+        error: null,
+      };
     case FETCH_CHART_ERROR:
       return {
         ...state,
         loading: false,
-        error: action.payload
-      }
+        error: action.payload,
+        prices: [],
+      };
     default:
       return state;
   }

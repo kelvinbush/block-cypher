@@ -1,12 +1,26 @@
-import React from 'react';
-import ChartContainer from "../components/ChartContainer";
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import ChartContainer from '../components/ChartContainer/ChartContainer';
+import { fetchMarketsData } from '../redux/markets/actions';
+import CoinList from '../components/CoinList/CoinList';
 
-const Home = (props) => (
-  <div>
-    <h1>Home</h1>
-    <p>This is the home page</p>
-    <ChartContainer coinId={'bitcoin'}/>
-  </div>
-);
+const Home = () => {
+  const { markets } = useSelector((state) => state.markets);
+  const { loading } = markets;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchMarketsData());
+  }, [dispatch]);
+
+  const bitcoin = markets.find((market) => market.id === 'bitcoin');
+
+  return (
+    <div>
+      {bitcoin && <ChartContainer coin={bitcoin} />}
+      <CoinList markets={markets} loading={loading} />
+    </div>
+  );
+};
 
 export default Home;

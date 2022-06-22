@@ -1,13 +1,18 @@
-import {Route, Routes} from 'react-router-dom';
-import Detail from "./pages/Detail";
-import Home from "./pages/Home";
+import { Route, Routes } from 'react-router-dom';
+import React from 'react';
+import Detail from './pages/Detail';
+import Home from './pages/Home';
+import Hero from './components/Hero/Hero';
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/detail/:id" element={<Detail />} />
-    </Routes>
+    <>
+      <Hero />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="detail/:coinId" element={<Detail />} />
+      </Routes>
+    </>
   );
 }
 

@@ -1,0 +1,40 @@
+.coin {
+  background-color: #4365a7;
+  padding: 30px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 3s ease-in-out;
+
+  @media screen and (min-width: 600px) {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 16px;
+    transition: all 3s ease-in-out;
+
+    @media screen and (min-width: 600px) {
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      grid-gap: 20px;
+    }
+  }
+
+  input {
+    width: 100%;
+    height: 40px;
+    margin: 20px auto;
+    border: 1px solid #4365a7;
+    border-radius: 5px;
+    padding: 0 10px;
+    outline: none;
+
+    @media screen and (min-width: 600px) {
+      width: 400px;
+      margin-bottom: 40px;
+    }
+  }
+}

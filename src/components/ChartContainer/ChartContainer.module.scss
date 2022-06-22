@@ -1,0 +1,75 @@
+.chart {
+  background-color: #5587e3;
+  padding-bottom: 50px;
+
+  &__header {
+    padding: 16px 16px;
+    margin: 30px 0 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (min-width: 600px) {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    &__title {
+      display: flex;
+      align-items: flex-end;
+
+      p {
+        font-weight: 700;
+        font-size: 0.9em;
+
+        span {
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    &__coin {
+      font-size: 0.5em;
+      font-weight: 700;
+
+      @media screen and (min-width: 600px) {
+        font-size: 0.6em;
+      }
+    }
+  }
+}
+
+.container {
+  background-color: #f8fafd;
+  padding: 16px 0;
+  margin: 0 5px;
+  border-radius: 0.4em;
+
+  @media screen and (min-width: 600px) {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  &__chips {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    column-gap: 1em;
+    margin: 0 2em 0.5em 0;
+    font-size: 0.3em;
+
+    &__chip {
+      border: 1px solid rgba(21, 21, 20, 0.15);
+      background-color: #fff;
+      font-weight: 400;
+      padding: 0.2em 0.5em;
+      border-radius: 0.4em;
+      cursor: pointer;
+    }
+  }
+}
+
+.active {
+  background-color: rgba(85, 135, 227, 0.3);
+  color: #4365a7;
+}
